@@ -33,7 +33,7 @@ const Profiles = () => {
                     aria-haspopup="true"
                     aria-expanded={open ? 'true' : undefined}
                 >
-                    <Avatar sx={{ width: 30, height: 30 }} alt='haipham' src='https://yt3.ggpht.com/Ok4OCcMOjs-0h-xR7Hl5rjL_sUXTfJoPIR4veIqln8ToMJsTx2cowgcDzGNEM0_GzX7RF9BWdw=s88-c-k-c0x00ffffff-no-rj' />
+                    <Avatar sx={{ width: 34, height: 34 }} alt='haipham' src='https://yt3.ggpht.com/Ok4OCcMOjs-0h-xR7Hl5rjL_sUXTfJoPIR4veIqln8ToMJsTx2cowgcDzGNEM0_GzX7RF9BWdw=s88-c-k-c0x00ffffff-no-rj' />
                 </IconButton>
             </Tooltip>
             <Menu
