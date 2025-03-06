@@ -1,21 +1,20 @@
-import Box from '@mui/material/Box';
-import React from 'react';
-import ModeSelect from '~/components/ModeSelect';
 import AppsIcon from '@mui/icons-material/Apps';
-import SvgIcon from '@mui/material/SvgIcon';
-import { ReactComponent as TrelloLogo } from '~/assets/trello.svg';
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import { Typography } from '@mui/material';
-import Workspaces from './Menu/Workspaces';
+import Badge from '@mui/material/Badge';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import SvgIcon from '@mui/material/SvgIcon';
+import TextField from '@mui/material/TextField';
+import Tooltip from '@mui/material/Tooltip';
+import { ReactComponent as TrelloLogo } from '~/assets/trello.svg';
+import ModeSelect from '~/components/ModeSelect';
+import Profiles from './Menu/Profiles';
 import Recent from './Menu/Recent';
 import Starred from './Menu/Starred';
 import Templates from './Menu/Templates';
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
-import Badge from '@mui/material/Badge';
-import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
-import Tooltip from '@mui/material/Tooltip';
-import HelpIcon from '@mui/icons-material/Help';
-import Profiles from './Menu/Profiles';
+import Workspaces from './Menu/Workspaces';
 
 const AppBar = () => {
     return (
@@ -24,7 +23,8 @@ const AppBar = () => {
             height: (theme) => theme.trello.appBarHeight,
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'space-between'
+            justifyContent: 'space-between',
+            gap: 2
         }} >
             <Box sx={{display:'flex', alignItems: 'center', gap: 2}}>
                 <AppsIcon sx={{color: 'primary.main'}} />
@@ -33,23 +33,25 @@ const AppBar = () => {
                     <Typography variant='span' sx={{fontSize: '1.2rem', fontWeight: 'bold', color: 'primary.main'}}>Trello</Typography>
                 </Box>
 
-                <Workspaces />
-                <Recent />
-                <Starred />
-                <Templates />
-                <Button variant="outlined">Create</Button>
+                <Box sx={{ display: {xs: 'none', md: 'flex'}}}>
+                    <Workspaces />
+                    <Recent />
+                    <Starred />
+                    <Templates />
+                    <Button variant="outlined">Create</Button>
+                </Box>
             </Box>
 
             <Box sx={{display:'flex', alignItems: 'center', gap: 2}}>
-                <TextField id="outlined-search" label="Search" type="search" size='small' />
+                <TextField id="outlined-search" label="Search" type="search" size='small' sx={{minWidth: '120px'}} />
                 <ModeSelect />
-                <Tooltip title="Notification">
-                    <Badge variant="dot" color="primary" sx={{cursor: 'pointer'}} >
-                        <NotificationsNoneIcon />
+                <Tooltip title="Notifications">
+                    <Badge variant="dot" color="secondary" sx={{cursor: 'pointer'}} >
+                        <NotificationsNoneIcon sx={{color: 'primary.main'}} />
                     </Badge>
                 </Tooltip>
-                <Tooltip title="Help" sx={{cursor: 'pointer'}}>
-                    <HelpIcon />
+                <Tooltip title="Help" sx={{cursor: 'pointer', color: 'primary.main'}}>
+                    <HelpOutlineIcon />
                 </Tooltip>
                 <Profiles />
             </Box>
